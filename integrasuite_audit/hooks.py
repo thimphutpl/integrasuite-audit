@@ -14,7 +14,7 @@ app_license = "mit"
 add_to_apps_screen = [
 	{
 		"name": "integrasuite_audit",
-		"logo": "/assets/integrasuite_audit/images/audit_logo.svg",
+		"logo": "/assets/integrasuite_audit/images/fcbl_audit_green.svg",
 		"title": "AMS",
 		"route": "/desk/home",
 		#"has_permission": "integrasuite_audit.api.permission.has_app_permission",
