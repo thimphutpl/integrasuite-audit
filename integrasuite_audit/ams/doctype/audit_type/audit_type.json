@@ -1,0 +1,54 @@
+{
+ "autoname": "field:type_of_audit",
+ "creation": "2022-06-21 09:17:30.367791",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "type_of_audit"
+ ],
+ "fields": [
+  {
+   "fieldname": "type_of_audit",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Type of Audit",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "modified": "2022-08-02 11:47:17.978797",
+ "modified_by": "Administrator",
+ "module": "AMS",
+ "name": "Audit Type",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

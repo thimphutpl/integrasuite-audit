@@ -1,0 +1,93 @@
+{
+ "creation": "2022-07-13 12:48:23.267996",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "audit_area_checklist",
+  "observation_title",
+  "section_break_001",
+  "observation",
+  "section_break_3",
+  "nature_of_irregularity",
+  "audit_remarks",
+  "column_break_5",
+  "status",
+  "auditee_remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "nature_of_irregularity",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Nature of Irregularity",
+   "options": "Nature of Irregularity",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Audit Status",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "audit_remarks",
+   "fieldtype": "Text Editor",
+   "label": "Audit Remarks"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "auditee_remarks",
+   "fieldtype": "Text Editor",
+   "label": "Auditee Remarks"
+  },
+  {
+   "fieldname": "audit_area_checklist",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Audit Checklist",
+   "options": "Audit Checklist",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "observation_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Observation Title"
+  },
+  {
+   "fieldname": "section_break_001",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "observation",
+   "fieldtype": "Text Editor",
+   "label": "Observation"
+  }
+ ],
+ "istable": 1,
+ "modified": "2022-11-21 15:11:44.758865",
+ "modified_by": "Administrator",
+ "module": "AMS",
+ "name": "Execute Audit Checklist Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

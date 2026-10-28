@@ -1,0 +1,18 @@
+// Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
+// License: GNU General Public License v3. See license.txt
+
+// render
+frappe.listview_settings['Prepare Audit Plan'] = {
+	get_indicator: function(doc) {
+		var status_color = {
+			"Pending": "orange",
+			"Engagement Letter": "orange",
+			"Audit Execution": "orange",
+			"Initial Report": "orange",
+			"Follow Up": "orange",
+			"Closed": "green"
+
+		};
+		return [__(doc.status), status_color[doc.status], "status,=,"+doc.status];
+	},
+};

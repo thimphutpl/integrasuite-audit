@@ -1,0 +1,85 @@
+{
+ "creation": "2022-08-17 11:44:04.888362",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "audit_area_checklist",
+  "observation_title",
+  "col_break_001",
+  "nature_of_irregularity",
+  "status",
+  "section_break_3",
+  "audit_remarks",
+  "column_break_5",
+  "auditee_remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "audit_area_checklist",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Audit Areas (Checklist)",
+   "options": "Audit Checklist",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "nature_of_irregularity",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Nature of Irregularity",
+   "options": "Nature of Irregularity",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "audit_remarks",
+   "fieldtype": "Text Editor",
+   "label": "Audit Remarks"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Audit Status",
+   "reqd": 1
+  },
+  {
+   "fieldname": "auditee_remarks",
+   "fieldtype": "Text Editor",
+   "label": "Action Taken (Auditee)"
+  },
+  {
+   "fieldname": "observation_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Observation Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_001",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "istable": 1,
+ "modified": "2022-11-21 10:25:57.159091",
+ "modified_by": "Administrator",
+ "module": "AMS",
+ "name": "Audit Initial Report Checklist Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

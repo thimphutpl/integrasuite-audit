@@ -1,0 +1,136 @@
+# Query: cflg
+# Flags: CaseSensitive
+# ContextLines: 1
+
+34 results - 11 files
+
+ams/doctype/audit_engagement_letter/audit_engagement_letter.py:
+  22  		doc.db_set("audit_engagement_letter", self.name)
+  23: 		doc.db_set("cflg_el", 1)
+  24  		doc.db_set("audit_plan_status", 'Engagement Letter')
+
+  28  		doc.db_set("audit_engagement_letter", '')
+  29: 		doc.db_set("cflg_el", 0)
+  30  		doc.db_set("audit_plan_status", 'Pending')
+
+ams/doctype/close_follow_up/close_follow_up.json:
+   29    "reference_no_section",
+   30:   "cflg",
+   31    "audit_engagement_letter",
+
+  230     "default": "1",
+  231:    "fieldname": "cflg",
+  232     "fieldtype": "Check",
+
+ams/doctype/close_follow_up/close_follow_up.py:
+  17  		self.update_on_cancel_execute_audit()
+  18: 		self.update_on_cancel_cflg_follow_up()
+  19    
+  20  	def before_save(self):
+  21: 		self.update_cflg_follow_up()
+  22  	
+
+  62  	
+  63: 	def update_cflg_follow_up(self):
+  64  		doc = frappe.get_doc("Follow Up", self.follow_up_no)
+  65: 		doc.db_set("cflg_follow_up", 1)
+  66    
+  67: 	def update_on_cancel_cflg_follow_up(self):
+  68  		doc = frappe.get_doc("Follow Up", self.follow_up_no)
+  69: 		doc.db_set("cflg_follow_up", 0)
+  70  
+
+ams/doctype/execute_audit/execute_audit.js:
+  27  					'branch': cur_frm.doc.branch,
+  28: 					'cflg_el': 1,
+  29  				}
+
+ams/doctype/execute_audit/execute_audit.py:
+   16  		# self.validate_audit_checklist()
+   17: 		# self.update_pap_checklist_cflg()
+   18  	
+   19  	def on_submit(self):
+   20: 		self.update_pap_checklist_cflg()
+   21  		self.update_checklist_status()
+
+   23  	def on_cancel(self):
+   24: 		self.update_pap_checklist_cflg_cancel()
+   25  		self.update_checklist_status_cancel()
+
+   51     
+   52: 	def update_pap_checklist_cflg(self):
+   53  		pap = frappe.get_doc("Prepare Audit Plan", self.prepare_audit_plan_no)
+
+   59  				if cl.audit_area_checklist == papcl.audit_area_checklist:
+   60: 					papcl.db_set("cflg", cl.cflg)
+   61      
+   62: 	def update_pap_checklist_cflg_cancel(self):
+   63  		pap = frappe.get_doc("Prepare Audit Plan", self.prepare_audit_plan_no)
+
+   69  				if cl.audit_area_checklist == papcl.audit_area_checklist:
+   70: 					papcl.db_set("cflg", 0)
+   71     
+
+  105  			SELECT 
+  106: 				papi.audit_area_checklist, 'Open' status, 1 cflg
+  107  			FROM 
+
+  112  				pap.name = papi.parent
+  113: 				AND papi.cflg = 0
+  114  			WHERE			
+
+ams/doctype/execute_audit_checklist_item/execute_audit_checklist_item.json:
+  14    "auditee_remarks",
+  15:   "cflg"
+  16   ],
+
+  71     "default": "0",
+  72:    "fieldname": "cflg",
+  73     "fieldtype": "Check",
+  74     "hidden": 1,
+  75:    "label": "cflg",
+  76     "print_hide": 1
+
+ams/doctype/follow_up/follow_up.js:
+  111  var add_button = (frm)=>{
+  112: 	if (frm.doc.docstatus == 1 && frm.doc.cflg_follow_up == 0) {
+  113  		frm.add_custom_button(__('Close Follow Up'), ()=>{
+
+ams/doctype/follow_up/follow_up.json:
+   34    "audit_engagement_letter",
+   35:   "cflg_follow_up",
+   36    "column_break_26",
+
+  245     "default": "0",
+  246:    "fieldname": "cflg_follow_up",
+  247     "fieldtype": "Check",
+
+ams/doctype/pap_checklist_item/pap_checklist_item.json:
+   9    "type_of_audit",
+  10:   "cflg"
+  11   ],
+
+  37     "default": "0",
+  38:    "fieldname": "cflg",
+  39     "fieldtype": "Check",
+  40     "hidden": 1,
+  41:    "label": "cflg",
+  42     "print_hide": 1,
+
+ams/doctype/prepare_audit_plan/prepare_audit_plan.js:
+  129  var add_button_cel = (frm)=>{
+  130: 	if (frm.doc.docstatus == 1 && frm.doc.cflg_el == 0 && frm.doc.owner == frappe.session.user){
+  131  		frm.add_custom_button(__('Create Engagement Letter'), ()=>{
+
+  141  var add_button_ea = (frm)=>{
+  142: 	if (frm.doc.docstatus == 1 && frm.doc.audit_plan_status == "Engagement Letter" && frm.doc.cflg_el == 1 && frm.doc.owner == frappe.session.user){
+  143  		frm.add_custom_button(__('Create Execute Audit'), ()=>{
+
+ams/doctype/prepare_audit_plan/prepare_audit_plan.json:
+   40    "audit_engagement_letter",
+   41:   "cflg_el",
+   42    "column_break_23",
+
+  233     "default": "0",
+  234:    "fieldname": "cflg_el",
+  235     "fieldtype": "Check",

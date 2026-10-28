@@ -1,0 +1,74 @@
+{
+ "creation": "2022-06-28 09:56:21.519899",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "audit_criteria",
+  "type_of_audit",
+  "branch",
+  "status",
+  "reference_no",
+  "reference_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "audit_criteria",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Audit Criteria",
+   "options": "Audit Criteria",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "audit_criteria.type_of_audit",
+   "fieldname": "type_of_audit",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Type of Audit",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "reqd": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "options": "\nOpen\nCompleted",
+   "print_hide": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "label": "Reference No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_date",
+   "fieldtype": "Data",
+   "label": "Reference Date",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2022-06-28 11:18:48.764605",
+ "modified_by": "Administrator",
+ "module": "AMS",
+ "name": "AAP Q1 Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
