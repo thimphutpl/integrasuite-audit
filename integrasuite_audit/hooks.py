@@ -16,7 +16,7 @@ add_to_apps_screen = [
 		"name": "integrasuite_audit",
 		"logo": "/assets/integrasuite_audit/images/fcbl_audit_green.svg",
 		"title": "AMS",
-		"route": "/desk/home",
+		"route": "/desk/ams/ams-home",
 		#"has_permission": "integrasuite_audit.api.permission.has_app_permission",
 	}
 ]
